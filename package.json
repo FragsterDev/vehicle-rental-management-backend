@@ -1,0 +1,26 @@
+{
+  "name": "vehicle-rental-management-backend",
+  "version": "1.0.0",
+  "description": "Server side of the vehicle rental management system built using node js and typescript",
+  "author": "Pratik Sharma",
+  "license": "ISC",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev":"tsx watch src/server.js",
+    "build":"tsc",
+    "start":"node dist/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
