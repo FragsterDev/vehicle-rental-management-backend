@@ -1,20 +1,13 @@
 import { Router } from "express";
 
-const router = Router();
+import { UserController } from "../controllers/UserController.js";
+import { createUserSchema } from "../validators/CreateUserValidator.js";
+import { validate } from "../../../../common/middleware/validate.js";
 
-router.get("/", (req, res) => {
-  res.status(200).json({
-    message: "Get user route is working",
-  });
-});
+export const userRouter = (userController: UserController): Router => {
+  const router = Router();
 
-router.post("/", (req, res) => {
-  const body = req.body;
+  router.post("/", validate(createUserSchema), userController.createUser);
 
-  res.status(200).json({
-    message: "User's Data has been received",
-    user: body,
-  });
-});
-
-export default router;
+  return router;
+};
